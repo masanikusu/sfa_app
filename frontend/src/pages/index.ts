@@ -7,3 +7,4 @@ export { default as Activities } from './Activities/Activities';
 export { default as Activity } from './Activity/Activity';
 export { default as Support } from './support/Support';
 export { default as Inquiry } from './Inquiry/Inquiry';
+export { default as Login } from './login/Login';
