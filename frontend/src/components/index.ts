@@ -1,3 +1,4 @@
-export { default as NavBar} from './navbar/Navbar';
-export { default as MenuBar} from './menubar/Menu';
-export { default as Footer} from './footer/Footer';
+export { default as NavBar } from './navbar/Navbar';
+export { default as MenuBar } from './menubar/MenuBar';
+export { default as Footer } from './footer/Footer';
+export { default as DataTable } from './table/DataTable';
