@@ -7,7 +7,7 @@ type Props = {
 
 const AddButton = ({ action }: Props) => {
   return (
-    <Button variant='outlined' startIcon={<AddIcon />} action={action}>
+    <Button variant='contained' startIcon={<AddIcon />} onClick={action}>
       追加
     </Button>
   );

@@ -6,41 +6,35 @@ import {
   GridToolbarQuickFilter,
   jaJP,
 } from '@mui/x-data-grid';
-import '../table/dataTable.scss';
-// import { useState } from 'react';
+import '../table/projectTable.scss';
+import { useState } from 'react';
 import { IconButton, Tooltip } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { AddButton } from '../button';
+import AddClient from '../dialog/AddClient';
 
 type Props = {
   columns: GridColDef[];
   rows: object[];
-};
+  label: string;
+}
 
-const DataTable = (props: Props) => {
-  const { columns, rows } = props;
-  // const [dialogOpen, setDialogOpen] = useState(false);
-  // const [selected, setSelected] = useState(false);
+const ClientTable = (props: Props) => {
+  const { columns, rows, label } = props;
+  const [dialogOpen, setDialogOpen] = useState(false);
 
-  const handle = () => console.log('###');
-  // const handleOpen = () => setDialogOpen(true);
-  // const handleEdit = () => {
-  //   setSelected(true);
-  // };
-  const handleDelete = (id: number) => {
-    console.log(id);
-    // setSelected(true);
-  };
+  const handleOpen = () => setDialogOpen(true);
+  const handleClose = () => setDialogOpen(false);
 
   const actionColumn: GridColDef[] = [
     {
       field: 'edit',
       headerName: '編集',
       width: 50,
-      renderCell: (params) => {
+      renderCell: () => {
         return (
-          <div onClick={() => handleDelete(params.row.id)}>
+          <div onClick={() => console.log('Clicked!')}>
             <Tooltip title='編集'>
               <IconButton>
                 <EditIcon color='success' />
@@ -54,12 +48,12 @@ const DataTable = (props: Props) => {
       field: 'delete',
       headerName: '削除',
       width: 50,
-      renderCell: (params) => {
+      renderCell: () => {
         return (
-          <div onClick={() => handleDelete(params.row.id)}>
+          <div onClick={() => console.log('Clicked!')}>
             <Tooltip title='削除'>
               <IconButton>
-                <DeleteIcon color='error'/>
+                <DeleteIcon color='error' />
               </IconButton>
             </Tooltip>
           </div>
@@ -72,7 +66,7 @@ const DataTable = (props: Props) => {
     return (
       <GridToolbarContainer sx={{ p: 3 }}>
         <GridToolbarQuickFilter />
-        <AddButton action={handle} />
+        <AddButton action={handleOpen} />
         <GridToolbarExport />
       </GridToolbarContainer>
     );
@@ -104,8 +98,18 @@ const DataTable = (props: Props) => {
         disableDensitySelector
         localeText={jaJP.components.MuiDataGrid.defaultProps.localeText}
       />
+      {dialogOpen && (
+        <AddClient
+          open={dialogOpen}
+          onClose={handleClose}
+          label={label}
+          onRegister={function (value: T): void {
+            throw new Error('Function not implemented.');
+          }}
+        />
+      )}
     </div>
   );
 };
 
-export default DataTable;
+export default ClientTable

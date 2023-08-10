@@ -1,55 +1,39 @@
-// import HomeIcon  from '@mui/icons-material/Home';
-// import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-// import PersonIcon from '@mui/icons-material/Person';
-// import HistoryIcon from '@mui/icons-material/History';
-// import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
-// import ContactSupportIcon from '@mui/icons-material/ContactSupport';
-// import { SvgIconProps } from '@mui/material/SvgIcon';
-
-
-// interface MenuItem {
-//   title: string;
-//   url: string;
-//   icon: any;
-// }
-
 // メニューデータ
 export const MenuData = [
   {
     id: 1,
     title: 'ホーム',
     url: '/',
-    // icon: <HomeIcon />,
   },
   {
     id: 2,
     title: '案件',
     url: '/projects',
-    // icon: <BusinessCenterIcon/>,
   },
   {
     id: 3,
     title: '顧客',
     url: '/clients',
-    // icon: <PersonIcon/>,
   },
   {
     id: 4,
     title: '活動履歴',
     url: '/activities',
-    // icon: <HistoryIcon/>,
   },
   {
     id: 5,
-    title: '問い合わせ',
-    url: '/inquiry',
-    // icon: <QuestionAnswerIcon/>,
+    title: '商品リスト',
+    url: '/products',
   },
   {
     id: 6,
-    title: 'FAQ',
-    url: '/support',
-    // icon: <ContactSupportIcon/>,
+    title: '商談報告',
+    url: '/reports',
+  },
+  {
+    id: 7,
+    title: '見積書作成',
+    url: '/quotations',
   },
 ];
 

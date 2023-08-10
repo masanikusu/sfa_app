@@ -2,8 +2,8 @@
 import { GridColDef } from '@mui/x-data-grid';
 import { Typography } from '@mui/material';
 import './projects.scss';
-import { DataTable } from '../../components';
 import { projectData } from '../../data';
+import { ProjectTable } from '../../components/table';
 
 const Projects = () => {
   const columns: GridColDef[] = [
@@ -56,10 +56,10 @@ const Projects = () => {
   return (
     <>
       <div className='projects'>
-        <Typography variant='subtitle1' gutterBottom>
+        <Typography variant='h6' gutterBottom>
           案件情報
         </Typography>
-        <DataTable columns={columns} rows={projectData} />
+        <ProjectTable columns={columns} rows={projectData} label='案件' />
       </div>
     </>
   );

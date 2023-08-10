@@ -1,25 +1,27 @@
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { MenuBar } from './components';
+import { NavBar } from './components';
 import './styles/global.scss';
 import {
   Activities,
   Clients,
   Home,
-  Inquiry,
   Login,
+  Products,
   Projects,
-  Support,
+  Quotations,
+  Reports,
 } from './pages';
+
 
 const App = () => {
   const Layout = () => {
     return (
       <div className='main'>
-        {/* <NavBar/> */}
+        <NavBar/>
         <div className='container'>
-          <div className='menuContainer'>
-            <MenuBar />
-          </div>
+          {/* <div className='menuContainer'> */}
+            {/* <MenuBar /> */}
+          {/* </div> */}
           <div className='contentContainer'>
             <Outlet />
           </div>
@@ -51,12 +53,16 @@ const App = () => {
           element: <Activities />,
         },
         {
-          path: '/inquiry',
-          element: <Inquiry />,
+          path: '/products',
+          element: <Products />,
         },
         {
-          path: '/support',
-          element: <Support />,
+          path: '/reports',
+          element: <Reports />,
+        },
+        {
+          path: '/quotations',
+          element: <Quotations />,
         },
       ],
     },
