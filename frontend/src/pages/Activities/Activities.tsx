@@ -2,7 +2,7 @@ import { GridColDef } from '@mui/x-data-grid';
 import { Typography } from '@mui/material';
 import { DataTable } from '../../components';
 import { activityHistory } from '../../data';
-import './activities.scss'
+import './activities.scss';
 
 const Activities = () => {
   const columns: GridColDef[] = [
@@ -42,21 +42,15 @@ const Activities = () => {
       sortable: false,
       type: 'string',
     },
-    {
-      field: 'totalCost',
-      headerName: '合計費用',
-      width: 130,
-      sortable: false,
-      type: 'number',
-    },
   ];
   return (
     <div className='activities'>
-    <Typography variant='h6' gutterBottom>
-      活動履歴
-    </Typography>
-    <DataTable columns={columns} rows={activityHistory} />
-  </div>  )
-}
+      <Typography variant='h6' gutterBottom>
+        活動履歴
+      </Typography>
+      {/* <DataTable columns={columns} rows={activityHistory} label='活動履歴'/> */}
+    </div>
+  );
+};
 
-export default Activities
+export default Activities;
