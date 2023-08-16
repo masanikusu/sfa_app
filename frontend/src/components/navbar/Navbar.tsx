@@ -161,20 +161,15 @@ const Navbar = () => {
   const [checked, setChecked] = useState(false);
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    useState<null | HTMLElement>(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null);
 
   // const isMenuOpen = Boolean(anchorEl);
   // const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const handleLogout = () => alert('ログアウトしました。');
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
-  };
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) =>  setChecked(event.target.checked);
 
-  const handleProfileMenuOpen = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const handleProfileMenuOpen = (event: MouseEvent<HTMLElement>) => setAnchorEl(event.currentTarget);
 
   const handleMobileMenuClose = () => setMobileMoreAnchorEl(null);
 
