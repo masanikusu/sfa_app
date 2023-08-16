@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  sfa-sample-api:
+    build: .
+    volumes:
+      - ./app:/app
+    ports:
+      - 80:80
+    environment:
+      - DB_USER
+      - DB_PASS
+      - DB_HOST
+      - DB_PORT
+      - DB_NAME
+      - APP_LOG_LEVEL
+      - DB_LOG_LEVEL
+      - CORS_ORGINS
+      - PGP_PASSWORD
+
+  sfa-sample-db:
+    image: postgres:14
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: postgresql
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sfa-sample-db
+
+volumes:
+  postgres_data:
